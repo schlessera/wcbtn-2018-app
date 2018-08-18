@@ -19,7 +19,7 @@ export class IdeasProvider {
 	getIdeas() {
 		console.log("refreshed ideas");
 		let user_id = JSON.parse(localStorage.getItem('wpIonicToken')).user_id;
-		return this.http.get(this.api_url + '?_embed&author=' + user_id);
+		return this.http.get(this.api_url + '?_embed&author=' + user_id + '&per_page=100');
 	}
 
 	postIdea(title, reminderText, reminderDate) {
